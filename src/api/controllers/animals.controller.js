@@ -59,6 +59,9 @@ const createAnimal = async (req,res, next) => {
     try{
         console.log(req.body);
         const newAnimal = Animal(req.body);
+        if (req.file){
+            newAnimal.photo = req.file.path;
+        }
         
         const createAnimal = await newAnimal.save();
         return res.json({

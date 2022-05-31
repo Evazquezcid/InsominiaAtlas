@@ -10,7 +10,7 @@ const { getAllAnimals, getAnimalByID, createAnimal, postNewInfo} = require("../c
 router.get("/", getAllAnimals);
 router.get("/:id",getAnimalByID);
 // router.post("/", createAnimal);
-router.post("/", createAnimal, upload.single("photo"),createAnimal);
+router.post("/", upload.single("photo"),createAnimal);
 // router.post("/", postNewInfo, upload.single("photo"),postNewInfo);
 
 
